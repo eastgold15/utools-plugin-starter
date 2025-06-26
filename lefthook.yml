@@ -1,0 +1,9 @@
+# Lefthook配置文件
+
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,vue}"
+      run: npx @biomejs/biome check --write --files-ignore-unknown=true --no-errors-on-unmatched "{staged_files}"
+      stage_fixed: true
